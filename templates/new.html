@@ -1,0 +1,52 @@
+<html>
+   <style>
+      form{
+         text-align: center;
+      }
+      input{
+         font-size: 1.5rem;
+      }
+      h1, h2{
+         text-align: center;
+         color:whitesmoke;
+      }
+      button{
+         padding: 10px;
+         margin-top: 10px;
+         font-size: 1.2rem;
+         background-color:coral;
+         font-weight: bolder;
+         color:black;
+         border-radius: 30px;
+         cursor: pointer;
+      }
+      button:hover{
+         background-color: deeppink;
+      }
+
+   </style>
+<body style="background-color: dimgrey;">
+    <div class="login">
+       <h1 style="margin-top: 20px;">FWI Prediction</h1>
+   
+        <!-- Main Input For Receiving Query to our ML -->
+       <form action="{{ url_for('predict')}}" method="post">
+         <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
+           <input type="text" name="RH" placeholder="RH" required="required" /><br>
+           <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
+           <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
+           <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
+           <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
+           <input type="text" name="DC" placeholder="DC" required="required" /><br>
+           <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
+           <input type="text" name="BUI" placeholder="BUI" required="required" /><br>
+           <input type="text" name="Classes" placeholder="Classes" required="required" /><br>
+   
+   
+   
+           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+       </form>
+   
+                   <h2> THE FWI prediction is {{result}} </h2>
+   <body>
+</html>
